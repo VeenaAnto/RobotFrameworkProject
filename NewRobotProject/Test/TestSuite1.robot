@@ -9,10 +9,10 @@ Test Teardown    Log    Inside Test Teardown
 MyFirstTest
     Log    Welcome To RobotFramework...    
 FirstSeleniumTest
-    Open Browser     https://enod-dev1.fa.em2.oraclecloud.com/    chrome
+    Open Browser    ${URL}    chrome
     Set Browser Implicit Wait    20
-    Input Text    id=userid    Veena.Anto@resmed.com
-    Input Text    id=password    Resmed123 
+    Input Text    id=userid    ${CREDENTIALS1}
+    Input Text    id=password    ${CREDENTIALS2}
     Click Button    id=btnActive 
     Wait Until Page Contains    Welcome    
     Title Should Be    Welcome    Page Title Verified
@@ -30,3 +30,8 @@ FirstSeleniumTest
     Log    Clicked on Save button
     Close Browser
     Log    Test Completed
+    
+*** Variables ***
+${URL}    https://enod-dev1.fa.em2.oraclecloud.com/  
+${CREDENTIALS1}    Veena.Anto@resmed.com    
+${CREDENTIALS2}    Resmed123          
